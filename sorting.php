@@ -170,7 +170,9 @@ function bubble_Sort($array)
 function cocktailSort($array)
 {
   if (is_string($array))
-  $array = str_split(preg_replace('/\s+/', '', $array));
+  {
+    $array = str_split(preg_replace('/\s+/', '', $array));
+  }
   do
   {
     $swapped = false;
@@ -185,7 +187,10 @@ function cocktailSort($array)
         }
       }
     }
-    if ($swapped == false) break;
+    if ($swapped == false)
+    {
+      break;
+    }
     $swapped = false;
     for($i = count($array) - 1; $i >= 0; $i--)
     {
@@ -208,7 +213,10 @@ function combSort($array)
   $swap = true;
   while ($gap > 1 || $swap)
   {
-    if($gap > 1) $gap /= 1.25;
+    if($gap > 1)
+    {
+      $gap /= 1.25;
+    }
     $swap = false;
     $i = 0;
     while($i + $gap < count($array))
@@ -273,7 +281,10 @@ function counting_sort($array, $min, $max)
 
 function merge_sort($array)
 {
-  if(count($array) == 1) return $array;
+  if(count($array) == 1)
+  {
+    return $array;
+  }
   $mid = count($array) / 2;
   $left = array_slice($array, 0, $mid);
   $right = array_slice($array, $mid);
